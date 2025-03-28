@@ -1,7 +1,8 @@
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 
-import java.util.*;
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -19,15 +20,15 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         float zahl = 0F;
         int eingelesen = 0;
-        float[]zahlen = new float[16];
+        float[] zahlen = new float[16];
 
         for (int i = 0; i < 16; i++) {
-            System.out.println("Wert " + (i+1) + "eingeben: ");
+            System.out.println("Wert " + (i + 1) + "eingeben: ");
             zahl = sc.nextFloat();
-            if(zahl == 0){
+            if (zahl == 0) {
                 break;
             }
-            if(zahl > 0 && zahl <= 100) {
+            if (zahl > 0 && zahl <= 100) {
                 zahlen[i] = zahl;
                 eingelesen++;
             }
@@ -40,16 +41,15 @@ public class Main {
 
         float sum_ohne_Division = 0.0F;
 
-        if(n > eingelesen || n <= 0  ) {
+        if (n > eingelesen || n <= 0) {
             System.out.println("Zu wenig Werte für n");
-        }else {
+        } else {
             for (int i = 0; i < n; i++) {
                 sum_ohne_Division += zahlen[i];
             }
             float wert = sum_ohne_Division / n;
             System.out.printf("%.2f\n", wert);
         }
-
 
 
     }
