@@ -15,7 +15,7 @@ public class Main {
         FileOutputStream fos = null;
 
 
-        File f = new File("..personen.json");
+      //  File f = new File("..personen.json");
 
 
         Scanner sc = null;
