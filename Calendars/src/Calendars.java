@@ -1,21 +1,14 @@
+import java.util.Scanner;
 
-import javax.swing.*;
-import java.util.*;
 public class Calendars {
 
-    /**** D O N T T O U C H T H I S ***/
-
-    private static Scanner sc = new Scanner(System.in);
     private static final int SET_DATE = 0;
     private static final int IS_LEAP = 1;
     private static final int DAYS_IN_MONTH = 2;
     private static final int CHECK_DATE = 3;
-
     private static final int YMD_2_W = 7;
     private static final int DAY_NUMBER = 8;
     private static final int WEEK_NUMBER = 9;
-    //private static final int COMPARE = 10;
-
     //private static final int DAY_NAME = 13;
     //private static final int PRINT_DAY = 14;
     //private static final int DAY_SHORT_NAME = 15;
@@ -24,14 +17,17 @@ public class Calendars {
     //private static final int PRINT_MONTH_SHORT = 18;
     //private static final int PRINT_DATE = 19;
     private static final int PRINT_STATISTICS = 20;
-
+    //private static final int COMPARE = 10;
     private static final int PRINT_CALENDAR_HIGHLIGHT = 21;
     private static final int PRINT_CALENDAR = 22;
-
     private static final int EXIT = 666;
+    /**** D O N T T O U C H T H I S ***/
+
+    private static final Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
 
+        /*
         sc = new Scanner(System.in);
         int day = 1, month = 1, year = 1970;
         while (true) {
@@ -56,7 +52,7 @@ public class Calendars {
                     year = sc.nextInt();
                     break;
 
-                /*------------------------- BASICS ----------------------*/
+
                 case IS_LEAP:
                     System.out.printf("\nisLeap(year): %b\n", isLeap(year));
                     break;
@@ -71,7 +67,7 @@ public class Calendars {
                     System.out.printf("checkDate3(year, month, day): %b\n", checkDate(year, month, day));
                     break;
 
-                /*------------------------- CALCULATIONS ----------------------*/
+
                 case YMD_2_W: {
                     System.out.printf("\nymd2w(year, month, day): %d\n", ymd2w(year, month, day));
                     break;
@@ -85,7 +81,7 @@ public class Calendars {
                     System.out.printf("\nweekNumber(year, month, day): %d\n", weekNumber(year, month, day));
                     break;
 
-                /*------------------------- OUTPUT ----------------------*/
+
 
                 case PRINT_STATISTICS:
                     System.out.printf("\nprintStatistics: ");
@@ -93,7 +89,7 @@ public class Calendars {
 
                     break;
 
-                /*------------------------- APPLICATIONS ----------------------*/
+
                 case PRINT_CALENDAR_HIGHLIGHT:
                     System.out.printf("\nprintCalendar(year, month, day, 1): \n");
                     printCalendar(year, month, day, true);
@@ -113,8 +109,12 @@ public class Calendars {
                 default:
                     ;
             }
-            System.out.printf("\n");
+
+
         }
+*/
+        test();
+
 
     }
 
@@ -169,10 +169,7 @@ public class Calendars {
     }
 
     public static boolean checkDate(int year) {
-        if (year >= 1582 && year <= 2199) {
-            return true;
-        }
-        return false;
+        return year >= 1582 && year <= 2199;
     }
 
     public static boolean checkDate(int year, int month) {
@@ -188,31 +185,78 @@ public class Calendars {
                     return true;
                 }
             }
-            if(year > 1582 && year < 2199){
-                if(month >= 1 && month <= 12){
-                    return true;
-                }
+            if (year > 1582 && year < 2199) {
+                return month >= 1 && month <= 12;
             }
         }
         return false;
 
 
     }
+
     public static boolean checkDate(int year, int month, int day) {
-        if(checkDate(year, month)){
-            if(year == 1582){
-                if(month >= 10 && month <= 12){
-                    if(day >= 1 && day <= 31){
+        if (checkDate(year, month)) {
+            if (year == 1582) {
+                switch (month) {
+                    case 10:
+                        if (day >= 16 && day <= 31) {
+                            return true;
+                        }
+                        break;
+                    case 11:
+                        if (day >= 1 && day <= 30) {
+                            return true;
+                        }
+                        break;
+                    case 12:
+                        if (day >= 1 && day <= 31) {
+                            return true;
+                        }
 
-                    }
+                    default:
+                        return false;
                 }
+
             }
+        } else if (year > 1582 && year <= 2199) {
+
+            if (checkDate(year, month)) {
+                int days = daysInMonth(year, month);
+                return days != -1;
+            } else {
+                return false;
+            }
+
+
         }
         return false;
     }
 
+    public static void test() {
+        Scanner sc = new Scanner(System.in);
+        while (true) {
+            System.out.println("Enter year: ");
+            int year = sc.nextInt();
+            System.out.println("Enter month: ");
+            int month = sc.nextInt();
+            System.out.println("Enter day: ");
+            int day = sc.nextInt();
+
+            System.out.println("check year: ");
+            boolean ausgabe = checkDate(year);
+            System.out.println(ausgabe);
+
+            System.out.println("check year,month: ");
+            ausgabe = checkDate(year, month);
+            System.out.println(ausgabe);
+
+            System.out.println("check year,month,day: ");
+            ausgabe = checkDate(year, month,day);
+            System.out.println(ausgabe);
+        }
 
 
+    }
 }
 
 
