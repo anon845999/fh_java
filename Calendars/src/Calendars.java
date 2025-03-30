@@ -175,19 +175,16 @@ public class Calendars {
     public static boolean checkDate(int year, int month) {
 
         if (checkDate(year)) {
+            if (year >= 1583 && year <= 2199) {
+                return month >= 1 && month <= 12;
+            }
+
             if (year == 1582) {
                 if (month >= 10 && month <= 12) {
                     return true;
                 }
             }
-            if (year == 2199) {
-                if (month >= 1 && month <= 12) {
-                    return true;
-                }
-            }
-            if (year > 1582 && year < 2199) {
-                return month >= 1 && month <= 12;
-            }
+
         }
         return false;
 
@@ -196,30 +193,8 @@ public class Calendars {
 
     public static boolean checkDate(int year, int month, int day) {
         if (checkDate(year, month)) {
-            if (year == 1582) {
-                switch (month) {
-                    case 10:
-                        if (day >= 16 && day <= 31) {
-                            return true;
-                        }
-                        break;
-                    case 11:
-                        if (day >= 1 && day <= 30) {
-                            return true;
-                        }
-                        break;
-                    case 12:
-                        if (day >= 1 && day <= 31) {
-                            return true;
-                        }
 
-                    default:
-                        return false;
-                }
-
-            }
-        } else if (year > 1582 && year <= 2199) {
-
+        } if (year >= 1583 && year <= 2199) {
             if (checkDate(year, month)) {
                 int days = daysInMonth(year, month);
                 return days != -1;
@@ -227,6 +202,26 @@ public class Calendars {
                 return false;
             }
 
+        } else if (year == 1582) {
+            switch (month) {
+                case 10:
+                    if (day >= 16 && day <= 31) {
+                        return true;
+                    }
+                    break;
+                case 11:
+                    if (day >= 1 && day <= 30) {
+                        return true;
+                    }
+                    break;
+                case 12:
+                    if (day >= 1 && day <= 31) {
+                        return true;
+                    }
+
+                default:
+                    return false;
+            }
 
         }
         return false;
