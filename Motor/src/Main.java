@@ -6,13 +6,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println("Die Motorsteuerung einer ZZR 1400 nimmt laufend Datenpakete als float Zahlen entgegen und verarbeitet\n" +
-                "diese. Ein Datenpaket darf höchstens 16 Werte beinhalten. Negative Werte bzw. Werte größer als 100\n" +
-                "werden ignoriert und sind nicht Bestandteil eines Datenpaketes. Der Wert 0 beendet ein Datenpaket vorzeitig.\n" +
-                "Wenn das Datenpaket eingelesen wurde, fragt die Motorsteuerung nach N und berechnet den Durschnittswert\n" +
-                "der ersten N Werte. Sollten weniger als N Werte vorhanden sein, wird eine Fehlermeldung „Zu wenige\n" +
-                "Werte“ ausgegeben.\n" +
-                "Jede weitere Eingabe wird vom Programm ignoriert. Es endet nach spätestens 17 Eingaben.\n");
+        System.out.println("Die Motorsteuerung einer ZZR 1400 nimmt laufend Datenpakete als float Zahlen entgegen und verarbeitet\n" + "diese. Ein Datenpaket darf höchstens 16 Werte beinhalten. Negative Werte bzw. Werte größer als 100\n" + "werden ignoriert und sind nicht Bestandteil eines Datenpaketes. Der Wert 0 beendet ein Datenpaket vorzeitig.\n" + "Wenn das Datenpaket eingelesen wurde, fragt die Motorsteuerung nach N und berechnet den Durschnittswert\n" + "der ersten N Werte. Sollten weniger als N Werte vorhanden sein, wird eine Fehlermeldung „Zu wenige\n" + "Werte“ ausgegeben.\n" + "Jede weitere Eingabe wird vom Programm ignoriert. Es endet nach spätestens 17 Eingaben.\n");
 
 
         System.out.println();
