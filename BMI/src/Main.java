@@ -17,6 +17,13 @@ public class Main {
 
       //  File f = new File("..personen.json");
 
+        try(Scanner sctest = new Scanner(System.in)) {  //wie in c# --> using (resource)
+            // macht quasi automatisch das finally
+
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+
 
         Scanner sc = null;
         try {
