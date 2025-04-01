@@ -193,34 +193,34 @@ public class Calendars {
 
     public static boolean checkDate(int year, int month, int day) {
         if (checkDate(year, month)) {
-
-        } if (year >= 1583 && year <= 2199) {
-            if (checkDate(year, month)) {
-                int days = daysInMonth(year, month);
-                return days != -1;
-            } else {
-                return false;
-            }
-//Test
-        } else if (year == 1582) {
-            switch (month) {
-                case 10:
-                    if (day >= 16 && day <= 31) {
-                        return true;
-                    }
-                    break;
-                case 11:
-                    if (day >= 1 && day <= 30) {
-                        return true;
-                    }
-                    break;
-                case 12:
-                    if (day >= 1 && day <= 31) {
-                        return true;
-                    }
-
-                default:
+            if (year >= 1583 && year <= 2199) {
+                if (checkDate(year, month)) {
+                    int days = daysInMonth(year, month);
+                    return days != -1;
+                } else {
                     return false;
+                }
+//Test
+            } else if (year == 1582) {
+                switch (month) {
+                    case 10:
+                        if (day >= 16 && day <= 31) {
+                            return true;
+                        }
+                        break;
+                    case 11:
+                        if (day >= 1 && day <= 30) {
+                            return true;
+                        }
+                        break;
+                    case 12:
+                        if (day >= 1 && day <= 31) {
+                            return true;
+                        }
+
+                    default:
+                        return false;
+        }
             }
 
         }
