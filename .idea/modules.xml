@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Artikelnummern/Artikelnummern.iml" filepath="$PROJECT_DIR$/Artikelnummern/Artikelnummern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BMI/BMI.iml" filepath="$PROJECT_DIR$/BMI/BMI.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BillaProblem/BillaProblem.iml" filepath="$PROJECT_DIR$/BillaProblem/BillaProblem.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Calendars/Calendars.iml" filepath="$PROJECT_DIR$/Calendars/Calendars.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CoronaTest_Java/CoronaTest_Java.iml" filepath="$PROJECT_DIR$/CoronaTest_Java/CoronaTest_Java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DateFormatConverter/DateFormatConverter.iml" filepath="$PROJECT_DIR$/DateFormatConverter/DateFormatConverter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Fensterbrett/Fensterbrett.iml" filepath="$PROJECT_DIR$/Fensterbrett/Fensterbrett.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Gesicht/Gesicht.iml" filepath="$PROJECT_DIR$/Gesicht/Gesicht.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GreaterLeft/GreaterLeft.iml" filepath="$PROJECT_DIR$/GreaterLeft/GreaterLeft.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Handytarif/Handytarif.iml" filepath="$PROJECT_DIR$/Handytarif/Handytarif.iml" />
+      <module fileurl="file://$PROJECT_DIR$/IntegerOperations/IntegerOperations.iml" filepath="$PROJECT_DIR$/IntegerOperations/IntegerOperations.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LoopStatistics/LoopStatistics.iml" filepath="$PROJECT_DIR$/LoopStatistics/LoopStatistics.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Milch/Milch.iml" filepath="$PROJECT_DIR$/Milch/Milch.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Motor/Motor.iml" filepath="$PROJECT_DIR$/Motor/Motor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ReadArray/ReadArray.iml" filepath="$PROJECT_DIR$/ReadArray/ReadArray.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Strom/Strom.iml" filepath="$PROJECT_DIR$/Strom/Strom.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SwapInPlace/SwapInPlace.iml" filepath="$PROJECT_DIR$/SwapInPlace/SwapInPlace.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Swapper/Swapper.iml" filepath="$PROJECT_DIR$/Swapper/Swapper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Test/Test.iml" filepath="$PROJECT_DIR$/Test/Test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/fh_java.iml" filepath="$PROJECT_DIR$/.idea/fh_java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/siebtermaerz/siebtermaerz.iml" filepath="$PROJECT_DIR$/siebtermaerz/siebtermaerz.iml" />
+    </modules>
+  </component>
+</project>
