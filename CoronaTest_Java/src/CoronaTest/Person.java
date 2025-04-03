@@ -9,8 +9,9 @@ public class Person {
         this.name = name;
         this.birthday = birthday;
         setTests(coronaTests);
-
     }
+
+    
 
     public String getName() {
         return name;
@@ -55,7 +56,6 @@ public class Person {
 
         return "";
     }
-
 
     public String toString() {
         StringBuilder sb = new StringBuilder();

@@ -2,7 +2,7 @@ package CoronaTest;
 
 import java.util.*;
 
-import CoronaTest.*;
+
 /**
  * A simple demo application
  * 
@@ -33,8 +33,6 @@ public class Main {
 		}
 
 	}
-
-
 	/**
 	 * Create some demo-data
 	 *

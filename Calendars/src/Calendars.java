@@ -1,5 +1,5 @@
 import java.util.Scanner;
-
+import java.io.*;
 public class Calendars {
 
     private static final int SET_DATE = 0;
@@ -27,10 +27,12 @@ public class Calendars {
 
     public static void main(String[] args) {
 
+
         /*
         sc = new Scanner(System.in);
         int day = 1, month = 1, year = 1970;
         while (true) {
+
 
             int op;
             System.out.printf("current date: %02d.%02d.%04d\n", day, month, year);
@@ -170,15 +172,14 @@ public class Calendars {
 
     public static boolean checkDate(int year) {
         return year >= 1582 && year <= 2199;
+
+
     }
-
     public static boolean checkDate(int year, int month) {
-
         if (checkDate(year)) {
             if (year >= 1583 && year <= 2199) {
                 return month >= 1 && month <= 12;
             }
-
             if (year == 1582) {
                 if (month >= 10 && month <= 12) {
                     return true;
@@ -190,7 +191,6 @@ public class Calendars {
 
 
     }
-
     public static boolean checkDate(int year, int month, int day) {
         if (checkDate(year, month)) {
             if (year >= 1583 && year <= 2199) {
