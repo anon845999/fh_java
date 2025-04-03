@@ -1,5 +1,8 @@
 package CoronaTest;
 
+import java.util.*;
+
+import CoronaTest.*;
 /**
  * A simple demo application
  * 
@@ -21,7 +24,13 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 
-		Date testDate = new Date(300,1,1);
+		ArrayList<Person[]> liste = new ArrayList();
+		liste.add(init());
+		for (Person[] p : liste) {
+			for(Person p1 : p) {
+				System.out.println(p1.toString());
+			}
+		}
 
 	}
 
@@ -32,31 +41,31 @@ public class Main {
 	 * @ProgrammingProblem.Hint provided
 	 * @return the persons
 	 */
-	/*
+
 	private static Person[] init() {
 		Person[] persons = new Person[4];
 		persons[0] = new Person("Mimi Musterfrau", new Date(1999, 2, 1),
-				new CoronaTest[] { new AntigenTest(new Date(2021, 1, 1), false),
+				new CoronaTests[]{new AntigenTest(new Date(2021, 1, 1), false),
 						new PcrTest(new Date(2021, 2, 1), true), new AntigenTest(new Date(2021, 2, 3), false),
-						new AntigenTest(new Date(2021, 2, 16), false), });
+						new AntigenTest(new Date(2021, 2, 16), false),});
 
 		persons[1] = new Person("Max Mustermann", new Date(1970, 6, 10),
-				new CoronaTest[] { new AntigenTest(new Date(2021, 1, 1), false),
+				new CoronaTests[]{new AntigenTest(new Date(2021, 1, 1), false),
 						new AntigenTest(new Date(2021, 2, 1), false), new AntigenTest(new Date(2021, 2, 3), false),
-						new AntigenTest(new Date(2021, 3, 1), true), });
+						new AntigenTest(new Date(2021, 3, 1), true),});
 
 		persons[2] = new Person("Marla Mustermann", new Date(1985, 11, 7),
-				new CoronaTest[] { new PcrTest(new Date(2021, 1, 1), false), new PcrTest(new Date(2021, 2, 1), false),
-						new PcrTest(new Date(2021, 3, 1), false), });
+				new CoronaTests[]{new PcrTest(new Date(2021, 1, 1), false), new PcrTest(new Date(2021, 2, 1), false),
+						new PcrTest(new Date(2021, 3, 1), false),});
 
 		persons[3] = new Person("Mark Mustermann", new Date(1945, 9, 23),
-				new CoronaTest[] { new AntigenTest(new Date(2021, 1, 1), false),
+				new CoronaTests[]{new AntigenTest(new Date(2021, 1, 1), false),
 						new PcrTest(new Date(2021, 2, 1), true), new PcrTest(new Date(2021, 2, 7), true),
-						new AntigenTest(new Date(2021, 2, 20), false), new PcrTest(new Date(2021, 3, 1), false), });
+						new AntigenTest(new Date(2021, 2, 20), false), new PcrTest(new Date(2021, 3, 1), false),});
 
 		return persons;
-	}
 
-	 */
+
+	}
 
 }

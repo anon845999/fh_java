@@ -11,5 +11,14 @@ public class PcrTest extends CoronaTests{
         return null;
     }
 
+    @Override
+    public String toString() {
 
+        StringBuilder sb = new StringBuilder(super.toString());
+        sb.append("PcrTest");
+        sb.append("\n");
+        sb.append("isPositive: \n");
+        return sb.toString();
+
+    }
 }
