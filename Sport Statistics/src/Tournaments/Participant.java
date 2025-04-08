@@ -28,5 +28,7 @@ public class Participant {
         this.age = age;
     }
 
-
+    public String toString() {
+        return "ID: " + ID + ", Name: " + name + ", Age: " + age;
+    }
 }
