@@ -1,6 +1,6 @@
 package Tournaments;
 
-public class SoccerTournament extends Tournament {
+public class CMountainbikeTournamentBase extends TournamentBase {
 
     @Override
     public void createTournament() {
@@ -18,12 +18,12 @@ public class SoccerTournament extends Tournament {
     }
 
     @Override
-    public Participant addParticipant(Participant participant) {
+    public CParticipant addParticipant(CParticipant CParticipant) {
         return null;
     }
 
     @Override
-    public Participant removeParticipant(Participant participant) {
+    public CParticipant removeParticipant(CParticipant CParticipant) {
         return null;
     }
 
@@ -33,12 +33,12 @@ public class SoccerTournament extends Tournament {
     }
 
     @Override
-    public void recordResult(Match match, Result result) {
+    public void recordResult(CMatch CMatch, EResult EResult) {
 
     }
 
     @Override
-    public Participant getWinner() {
+    public CParticipant getWinner() {
         return null;
     }
 }

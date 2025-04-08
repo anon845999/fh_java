@@ -2,11 +2,11 @@ package HelperClass;
 
 import java.util.Scanner;
 
-public class Userinput {
+public class CUserinput {
 
     private final Scanner sc = new Scanner(System.in);
     private String input;
-    public Userinput() {
+    public CUserinput() {
     }
 
     public void askUser(String input) {

@@ -1,6 +1,6 @@
 import java.io.*;
 
-import HelperClass.Userinput;
+import HelperClass.CUserinput;
 import csvstrategy.*;
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -10,11 +10,11 @@ public class Main {
         System.out.println("It is only allowed to choose one Tournament at the beginning when Person is created");
         System.out.println("Tournament will play again");
 
-        ActualHandler readerwriter = new ActualHandler(new OpenCsvStrategy());
+        CActualHandler readerwriter = new CActualHandler(new COpenICsvStrategy());
         readerwriter.handle("data.csv");
 
 
-        Userinput userinput = new Userinput();
+        CUserinput CUserinput = new CUserinput();
 
 
 

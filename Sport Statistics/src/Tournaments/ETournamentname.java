@@ -1,6 +1,6 @@
 package Tournaments;
 
-public enum Tournamentname {
+public enum ETournamentname {
     CHESS,
     SOCCER,
     MTB;

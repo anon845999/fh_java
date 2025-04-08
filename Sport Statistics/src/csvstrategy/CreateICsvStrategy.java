@@ -1,9 +1,8 @@
 package csvstrategy;
 
 import java.io.*;
-import java.util.List;
 
-public class CreateCsvStrategy implements CsvFilesStrategy {
+public class CreateICsvStrategy implements ICsvFilesStrategy {
 
     @Override
     public void handle(String filepath) throws IOException {

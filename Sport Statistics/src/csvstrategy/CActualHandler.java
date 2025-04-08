@@ -2,17 +2,17 @@ package csvstrategy;
 
 import java.io.IOException;
 
-public class ActualHandler {
+public class CActualHandler {
 
-    private CsvFilesStrategy strategy;
-    public ActualHandler(CsvFilesStrategy strategy) {
+    private ICsvFilesStrategy strategy;
+    public CActualHandler(ICsvFilesStrategy strategy) {
         this.strategy = strategy;
     }
     public void handle(String filepath)throws IOException {
         strategy.handle(filepath);
     }
 
-    public void setStrategy(CsvFilesStrategy strategy) {
+    public void setStrategy(ICsvFilesStrategy strategy) {
         this.strategy = strategy;
     }
 

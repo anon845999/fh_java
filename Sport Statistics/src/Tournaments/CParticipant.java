@@ -1,13 +1,13 @@
 package Tournaments;
 
-public class Participant {
+public class CParticipant {
 
     private final int ID;
     private String name;
     private int age;
 
-    public Participant(String name, int age) {
-        this.ID = ParticipantIdGenerator.getInstance().getNextId();
+    public CParticipant(String name, int age) {
+        this.ID = CParticipantIdGenerator.getInstance().getNextId();
         this.name = name;
         this.age = age;
     }

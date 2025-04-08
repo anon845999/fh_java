@@ -65,7 +65,6 @@ public class Main {
             System.out.println("even numbers list is empty");
         }
 
-
         System.out.println("mean of even numbers: " + meanOfEvenNumbers);
 
         //value of the maximum even number

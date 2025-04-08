@@ -1,6 +1,6 @@
 package Tournaments;
 
-public enum Result {
+public enum EResult {
     WON,
     LOST,
     DRAW;
