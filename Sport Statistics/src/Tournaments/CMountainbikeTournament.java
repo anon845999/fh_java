@@ -1,11 +1,8 @@
 package Tournaments;
 
-public class CSoccerTournamentBase extends TournamentBase {
+public class CMountainbikeTournament extends TournamentBase {
 
-    @Override
-    public void createTournament() {
 
-    }
 
     @Override
     public void createPlayers() {
@@ -17,15 +14,7 @@ public class CSoccerTournamentBase extends TournamentBase {
 
     }
 
-    @Override
-    public CParticipant addParticipant(CParticipant CParticipant) {
-        return null;
-    }
 
-    @Override
-    public CParticipant removeParticipant(CParticipant CParticipant) {
-        return null;
-    }
 
     @Override
     public void startTournament() {

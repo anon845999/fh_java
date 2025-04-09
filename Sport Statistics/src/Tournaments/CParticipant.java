@@ -1,5 +1,7 @@
 package Tournaments;
 
+import java.util.Objects;
+
 public class CParticipant {
 
     private final int ID;
@@ -26,6 +28,18 @@ public class CParticipant {
     }
     public void setAge(int age) {
         this.age = age;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        CParticipant that = (CParticipant) o;
+        return ID==that.ID;
+    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(ID);
     }
 
     public String toString() {
