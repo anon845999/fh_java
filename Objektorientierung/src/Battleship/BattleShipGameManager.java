@@ -98,6 +98,7 @@ public class BattleShipGameManager {
                        int y = UtilityClass.tryParseToInteger(UtilityClass.userInput);
                        System.out.println();
 
+                       //todo  bessere punkteübersicht
                        if(board.getField(x, y) == State.SHIP_NO_HIT){
                            board.player2.addPoints(1);
                            board.setField(x,y, State.SHIP_HIT);
