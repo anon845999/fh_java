@@ -15,7 +15,6 @@ public class CreateICsvStrategy implements ICsvFilesStrategy {
             bw.write("SJ,ENCE,3,16");
             bw.write("FURIA,NRG,7,16");
             bw.write("FURIA,Prospects,16,1");
-
         }
     }
 }
