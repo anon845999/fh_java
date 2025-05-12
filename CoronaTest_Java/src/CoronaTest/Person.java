@@ -3,15 +3,13 @@ package CoronaTest;
 public class Person {
     private String name;
     private Date birthday;
-    private CoronaTests[] tests;
+    private CoronaTest[] tests;
 
-    public Person(String name, Date birthday, CoronaTests[] coronaTests) {
+    public Person(String name, Date birthday, CoronaTest[] coronaTests) {
         this.name = name;
         this.birthday = birthday;
         setTests(coronaTests);
     }
-
-    
 
     public String getName() {
         return name;
@@ -21,7 +19,7 @@ public class Person {
         return birthday;
     }
 
-    public CoronaTests[] getCoronaTests() {
+    public CoronaTest[] getCoronaTests() {
         return tests;
     }
 
@@ -33,23 +31,23 @@ public class Person {
         this.birthday = birthday;
     }
 
-    public void setTests(CoronaTests[] coronaTests) {
-        CoronaTests[] newCoronaTests = new CoronaTests[coronaTests.length];
+    public void setTests(CoronaTest[] coronaTests) {
+        CoronaTest[] newCoronaTests = new CoronaTest[coronaTests.length];
         System.arraycopy(coronaTests, 0, newCoronaTests, 0, coronaTests.length);
         tests = newCoronaTests;
     }
 
-    public CoronaTests lastTestBeforeDate(CoronaTests test) {
+    public CoronaTest lastTestBeforeDate(CoronaTest test) {
         if (test != null) {
             for (var item : tests) {
                 if (item.getTestDate() == test.getTestDate()) {
                     return item;
+
                 }
             }
         }
 
         return null;
-
     }
 
     public String coronaStatus(Date testDate) {
@@ -64,7 +62,7 @@ public class Person {
         sb.append("birthday: " + birthday);
         sb.append("\n");
         sb.append("tests: ");
-        for (CoronaTests test : tests) {
+        for (CoronaTest test : tests) {
             sb.append(test.isPositive()+ "");
         }
         return sb.toString();

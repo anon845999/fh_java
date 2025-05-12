@@ -1,0 +1,28 @@
+### GET request to example server
+GET https://examples.http-client.intellij.net/get
+    ?generated-in=IntelliJ IDEA
+
+###
+
+###
+POST http://localhost:8080/api/v1/coffee-services
+Content-Type: application/json
+
+{
+  "name": "Test1",
+  "type": "coffee",
+  "price": 3.7
+
+}
+
+<> 2025-05-09T104716.400.json
+
+###
+DELETE http://localhost:8080/api/v1/coffee-services
+Content-Type: application/json
+
+{
+  "name": "",
+  "type": "",
+  "price": 0
+}

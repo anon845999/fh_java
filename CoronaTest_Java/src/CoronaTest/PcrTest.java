@@ -1,6 +1,6 @@
 package CoronaTest;
 
-public class PcrTest extends CoronaTests{
+public class PcrTest extends CoronaTest {
 
     public PcrTest(Date testDate, boolean isPositive) {
         super(testDate, isPositive);
