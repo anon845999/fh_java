@@ -1,5 +1,7 @@
 package carinspection;
 
+import java.util.List;
+
 public class SeniorWorker extends Worker {
 
     public SeniorWorker(String name) {
@@ -30,6 +32,13 @@ public class SeniorWorker extends Worker {
     @Override
     public void setHourlyRate(int hourlyRate) {
         super.setHourlyRate(hourlyRate);
+    }
+
+
+
+    @Override
+    public void accept(IVisitor visitor) {
+        visitor.visit(this);
     }
 }
 

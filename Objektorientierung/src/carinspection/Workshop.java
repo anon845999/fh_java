@@ -1,14 +1,18 @@
 package carinspection;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Workshop {
 
-    private List<Worker> juniors = new ArrayList<>();
-    private List<Worker> seniors = new ArrayList<>();
+  //  private List<Worker> juniors = new ArrayList<>();
+  //  private List<Worker> seniors = new ArrayList<>();
+    private List<Worker> workers = new ArrayList<>();
+    private Map<Class<Worker>,Double> workerMap = new HashMap<>();
     private IJob job;
-    private double totalCost;
+    private double totalCostJuniorsAndSeniors;
     private double totalCostPerJunior;
     private double totalCostPerSenior;
     private int totalHours;
@@ -25,7 +29,7 @@ public class Workshop {
         System.out.println("Hours needed: " + job.getHours());
 
         if (result) {
-            System.out.println("Total cost: " + getTotalCost());
+            System.out.println("Total cost: " + getTotalCostJuniorsAndSeniors());
             System.out.println("Total cost per Junior: " + getTotalCostPerJunior());
             System.out.println("Total cost per Senior: " + getTotalCostPerSenior());
             System.out.println("Total hours: " + getTotalHours());
@@ -40,7 +44,7 @@ public class Workshop {
     }
 
     public int getActualWorkerSize() {
-        return seniors.size() + juniors.size();
+        return workers.size();
     }
 
     public boolean inspect() {
@@ -53,7 +57,12 @@ public class Workshop {
     }
 
     public boolean enoughSeniors() {
-        return !seniors.isEmpty();
+        for (Worker worker : workers) {
+            if (worker instanceof SeniorWorker) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public boolean enoughWorkers() {
@@ -66,24 +75,21 @@ public class Workshop {
         return job != null;
     }
 
-    public double getTotalCost() {
-        totalCost = job.getBasePrice();
+    public double getTotalCostJuniorsAndSeniors() {
+        totalCostJuniorsAndSeniors = job.getBasePrice();
         totalCostPerJunior = 0;
         totalCostPerSenior = 0;
         totalHours = job.getHours();
         double hoursPerWorker = (double) totalHours / getActualWorkerSize();
 
-        for (Worker worker : juniors) {
-            double cost = worker.getHourlyRate() * hoursPerWorker;
-            totalCost += cost;
-            totalCostPerJunior += cost;
+        CostCalculatorVisitor visitor = new CostCalculatorVisitor(hoursPerWorker);
+        for (Worker worker : workers) {
+            worker.accept(visitor);
         }
-        for (Worker worker : seniors) {
-            double cost = worker.getHourlyRate() * hoursPerWorker;
-            totalCost += cost;
-            totalCostPerSenior += cost;
-        }
-        return totalCost;
+        totalCostPerJunior = visitor.getCostPerJunior();
+        totalCostPerSenior = visitor.getCostPerSenior();
+        totalCostJuniorsAndSeniors = job.getBasePrice() + visitor.getTotalCost();
+        return totalCostJuniorsAndSeniors;
     }
 
     private double getTotalCostPerJunior() {
@@ -102,11 +108,7 @@ public class Workshop {
         if (worker == null) {
             throw new IllegalArgumentException("Worker is null");
         }
-        if (worker instanceof JuniorWorker) {
-            juniors.add(worker);
-        } else if (worker instanceof SeniorWorker) {
-            seniors.add(worker);
-        }
+        worker.addWorkerToList(workers);
     }
 
     public void setJob(IJob job) {

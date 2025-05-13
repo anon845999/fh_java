@@ -1,8 +1,8 @@
 package carinspection;
 
-abstract public class Worker {
+import java.util.List;
 
-
+public abstract class Worker {
     protected String name;
     protected int hourlyRate;
     public Worker(String name) {
@@ -26,4 +26,8 @@ abstract public class Worker {
     public void setHourlyRate(int hourlyRate) {
         this.hourlyRate = hourlyRate;
     }
+    public void addWorkerToList(List<Worker> workers){
+        workers.add(this);
+    }
+    public abstract void accept(IVisitor visitor);
 }

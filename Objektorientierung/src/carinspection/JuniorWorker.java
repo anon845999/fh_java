@@ -1,5 +1,7 @@
 package carinspection;
 
+import java.util.List;
+
 public class JuniorWorker extends Worker {
 
     public JuniorWorker(String name) {
@@ -17,6 +19,13 @@ public class JuniorWorker extends Worker {
     @Override
     public void setName(String name) {
         super.setName(name);
+    }
+
+
+
+    @Override
+    public void accept(IVisitor visitor) {
+        visitor.visit(this);
     }
 
 
