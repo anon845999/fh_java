@@ -4,7 +4,6 @@ import java.util.List;
 
 public abstract class Worker {
     protected String name;
-    protected int hourlyRate;
     public Worker(String name) {
         this.name = name;
     }
@@ -23,11 +22,8 @@ public abstract class Worker {
                 '}';
     }
 
-    public void setHourlyRate(int hourlyRate) {
-        this.hourlyRate = hourlyRate;
-    }
-    public void addWorkerToList(List<Worker> workers){
-        workers.add(this);
-    }
+
+    public abstract boolean isSenior();
+
     public abstract void accept(IVisitor visitor);
 }

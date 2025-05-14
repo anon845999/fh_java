@@ -21,25 +21,21 @@ public class Workshop {
     }
 
     public void printReport() {
-        boolean result = inspect();
         System.out.println("Workshop report:");
-        System.out.println("Job: " + job.toString());
+        System.out.println("Job: " + job);
         System.out.println("Number of workers required: " + job.getMinNumberOfWorkers());
         System.out.println("Number of actual workers: " + getActualWorkerSize());
         System.out.println("Hours needed: " + job.getHours());
 
-        if (result) {
-            System.out.println("Total cost: " + getTotalCostJuniorsAndSeniors());
-            System.out.println("Total cost per Junior: " + getTotalCostPerJunior());
-            System.out.println("Total cost per Senior: " + getTotalCostPerSenior());
-            System.out.println("Total hours: " + getTotalHours());
+        if (isJobPossible()) {
+            System.out.printf("Total cost: %.2f\n", getTotalCostJuniorsAndSeniors());
+            System.out.printf("Total cost per Junior: %.2f\n", totalCostPerJunior);
+            System.out.printf("Total cost per Senior: %.2f\n", totalCostPerSenior);
+            System.out.println("Total hours: " + totalHours);
             System.out.println("Status: possible");
         } else {
-            if (!enoughSeniors()) {
-                System.out.println("Status: not possible – Reason: 1 senior worker required");
-            } else {
-                System.out.println("Status: not possible – Reason: not enough workers");
-            }
+            System.out.println("Status: not possible – Reason: " +
+                    (!enoughSeniors() ? "1 senior worker required" : "not enough workers"));
         }
     }
 
@@ -47,7 +43,7 @@ public class Workshop {
         return workers.size();
     }
 
-    public boolean inspect() {
+    public boolean isJobPossible() {
         if (job == null) {
             throw new IllegalArgumentException("Job is null");
         }
@@ -57,12 +53,7 @@ public class Workshop {
     }
 
     public boolean enoughSeniors() {
-        for (Worker worker : workers) {
-            if (worker instanceof SeniorWorker) {
-                return true;
-            }
-        }
-        return false;
+        return workers.stream().anyMatch(Worker::isSenior);
     }
 
     public boolean enoughWorkers() {
@@ -92,11 +83,11 @@ public class Workshop {
         return totalCostJuniorsAndSeniors;
     }
 
-    private double getTotalCostPerJunior() {
+    public double getTotalCostPerJunior() {
         return totalCostPerJunior;
     }
 
-    private double getTotalCostPerSenior() {
+    public double getTotalCostPerSenior() {
         return totalCostPerSenior;
     }
 
@@ -108,7 +99,7 @@ public class Workshop {
         if (worker == null) {
             throw new IllegalArgumentException("Worker is null");
         }
-        worker.addWorkerToList(workers);
+        workers.add(worker);
     }
 
     public void setJob(IJob job) {
