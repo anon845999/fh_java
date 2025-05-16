@@ -1,0 +1,27 @@
+### GET request to example server
+GET https://examples.http-client.intellij.net/get
+    ?generated-in=IntelliJ IDEA
+
+###
+GET http://localhost:8080/helloworld
+
+###
+GET http://localhost:8080/api/v1/softwareengineers
+
+### Erstelle neuen Software Engineer
+POST http://localhost:8080/api/v1/softwareengineers
+Content-Type: application/json
+
+{
+  "name": "James",
+  "techStack": "JS,Node; React"
+}
+
+###
+POST http://localhost:8080/api/v1/
+Content-Type: application/json
+
+{
+  "name": "Json",
+  "techStack": "java,spring boot, spring"
+}
